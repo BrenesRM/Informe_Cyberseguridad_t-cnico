@@ -414,7 +414,21 @@ normal de aplicaciones cloud.
 
 ------------------------------------------------------------------------
 
-# 8. Secuencia completa del ataque
+# 8. Mapeo MITRE ATT&CK
+
+Para estandarizar el análisis desde una perspectiva de ciberseguridad, se mapean las técnicas observadas en GRIDTIDE con el marco MITRE ATT&CK.
+
+| Táctica | Técnica | ID | Descripción en GRIDTIDE |
+| :--- | :--- | :--- | :--- |
+| **Persistencia** | Registry Run Keys / Startup Folder | T1547.001 | Se asegura de ejecutarse en cada inicio del sistema. |
+| **Evasión de Defensa** | Web Service | T1102 | Utiliza servicios de hojas de cálculo legítimos para ocultar C2. |
+| **Comando y Control** | Application Layer Protocol | T1071.001 | Usa solicitudes HTTPS hacia servicios cloud (Google Sheets, etc). |
+| **Comando y Control** | Data Encoding | T1132 | Los comandos y resultados suelen estar codificados en las celdas. |
+| **Exfiltración** | Exfiltration Over C2 Channel | T1041 | Los datos robados se suben al mismo documento usado para mandos. |
+
+---
+
+# 9. Secuencia completa del ataque
 
 ``` mermaid
 flowchart TD
@@ -442,16 +456,8 @@ H --> D
 
 # Conclusión
 
-GRIDTIDE representa una arquitectura de malware moderna basada en el uso
-de servicios cloud como canal de comando y control.
+GRIDTIDE representa una arquitectura de malware moderna y altamente eficaz basada en el uso de servicios cloud legítimos como canal de comando y control. 
 
-Desde la perspectiva de arquitectura de sistemas, el implante puede
-modelarse como un **sistema distribuido compuesto por un agente de
-ejecución, un intermediario cloud y un operador remoto**.
+Desde la perspectiva de arquitectura de sistemas, el implante es un **sistema distribuido resiliente** que aprovecha la confianza implícita en infraestructuras de terceros. El uso de metodologías como **Arcadia** y el mapeo con **MITRE ATT&CK** permite diseccionar la amenaza no solo como un archivo malicioso, sino como una pieza de ingeniería diseñada para objetivos estratégicos de espionaje.
 
-El uso de metodologías como **Arcadia** permite analizar este tipo de
-amenazas de forma estructurada, identificando actores, funciones,
-componentes y dependencias de infraestructura.
-
-El resultado es una comprensión clara del sistema de ataque, su flujo de
-operación y su arquitectura interna.
+El resultado es una comprensión clara del sistema de ataque, su flujo de operación y su arquitectura interna, facilitando el diseño de defensas más robustas basadas en el comportamiento del sistema.
