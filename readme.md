@@ -21,7 +21,11 @@ Cada reporte en este repositorio se esfuerza por seguir un marco metodológico e
 ## Estructura del Repositorio
 
 - `informe_gridtide_unc2814.md`: Análisis arquitectónico del malware GRIDTIDE.
-- (Próximamente más reportes...)
+- `TEMPLATE_INFORME.md`: Plantilla estandarizada para nuevos análisis.
+
+## Cómo usar este repositorio
+
+Para crear un nuevo análisis, copia el contenido de `TEMPLATE_INFORME.md` en un nuevo archivo `.md` y completa las secciones siguiendo la metodología descrita.
 
 ## Autor
 Análisis de Ciberseguridad Técnica
